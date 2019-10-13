@@ -5,8 +5,6 @@ a = int(input('Enter the length of your first side (non-hypotenuse). Please use 
 b = int(input('Enter the length of your second side (non-hypotenuse). Please use numbers only: '))
 c = int(input('Enter the length of your hypotenuse. Please use numbers only: '))
 
-sides = [a, b, c]
-
 
 #Defines whether the user's triangle is a pythagorean triple
 def is_a_pythagorean_triple(a, b, c):
