@@ -8,13 +8,17 @@ print('Are you ready to play? Good luck!')
 
 
 def higher_lower(play_num, comp_num):
+    highest = 100
+    lowest = 1
     while play_num != comp_num:
         if play_num > comp_num:
             print('The computer\'s secret number is lower than yours.')
-            play_num = play_num = int(input('Please enter a number between 1 and {}: '.format(play_num)))
+            highest = play_num
+            play_num = play_num = int(input('Please enter a number between {} and {}: '.format(lowest, highest)))
         elif play_num < comp_num:
             print('The computer\'s secret number is higher than yours.')
-            play_num = play_num = int(input('Please enter a number between {} and 100: '.format(play_num)))
+            lowest = play_num
+            play_num = play_num = int(input('Please enter a number between {} and {}: '.format(lowest, highest)))
     if play_num == comp_num:
         print('Congratulations! The computer\'s number was {}.'.format(comp_num))
 
