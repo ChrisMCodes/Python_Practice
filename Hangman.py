@@ -30,8 +30,6 @@ guess = ''
 
 
 while guess_count > 0:
-    if guess == secret_word:
-        print('You have guessed correctly! The secret word was {}!'.format(secret_word))
     print('You have {} guesses remaining.\n'.format(guess_count))
     #This prints out a list of the user's guesses so far after the first guess
     if len(guesses) > 0:
