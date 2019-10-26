@@ -1,5 +1,4 @@
-#This is updated to be somewhat more functional. Still trying to work out how to get duplicates of the same letter to work.
-
+#Hangman is now functional! No graphics yet, but I think it handles most cases. Please let me know if/when you find a bug.
 #First, we'll import random so that we can choose from our word list at random
 import random
 
@@ -8,7 +7,7 @@ word_list = ['abruptly', 'absurd', 'abyss', 'askew', 'avenue', 'awkward', 'axiom
 
 #Next, we're choosing a word from the word list and calling it 'secret_word'
 secret_word = random.choice(word_list)
-print('TEST: LINE 13. THE SECRET WORD IS: ', secret_word)
+#print('TEST: LINE 13. THE SECRET WORD IS: ', secret_word)
 #Here's a list containing all the letters in secret_word
 secret_letters = [letter for letter in secret_word]
 
@@ -31,7 +30,7 @@ guess = ''
 
 while guess_count > 0:
     print('You have {} guesses remaining.\n'.format(guess_count))
-    #This prints out a list of the user's guesses so far after the first guess
+    #This prints out a list of the letters guessed so far after the first guess
     if len(guesses) > 0:
         print('So far you have guessed: ', guesses)
         print('The word so far is ', display_letters)
@@ -44,6 +43,7 @@ while guess_count > 0:
     if len(guess) != 1:
         print('This is an invalid guess. Please enter only one letter and hit ENTER.')
         continue
+    #Ensures that the user does not waste a guess
     if guess in guesses:
         print('You have already guessed this letter. Please choose another letter and hit ENTER.')
         continue
@@ -52,14 +52,18 @@ while guess_count > 0:
     #Here begins the magic
     if guess in secret_word:
         print('Great job! There is a {} in the secret word!'.format(guess))
+        new_idx = 0 #Sets an index incrementing variable for the for loop that follows
         for letter in secret_letters:
             if letter == guess:
-                new_idx = secret_letters.index(letter)
+                #Sets compare_letters[same index as letter] to the letter
                 compare_letters[new_idx] = letter
+                #Converts compare_letters into a string
                 display_letters = "".join(compare_letters)
+                #Checks to see whether this solves the word
                 if display_letters == secret_word:
                     print('You have successfully guessed the word!')
                     break
+            new_idx += 1
     else:
         print('No. There is no {} in the secret word.'.format(guess))
     #Decrements the guess counter
