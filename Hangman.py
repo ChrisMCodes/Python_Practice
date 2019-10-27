@@ -69,5 +69,5 @@ while guess_count > 0:
     #Decrements the guess counter
     guess_count -= 1
 
-if guess_count == 0:
+if guess_count == 0 and display_letters != secret_word:
     print('Better luck next time! The word was {}.'.format(secret_word))
