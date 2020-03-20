@@ -54,31 +54,35 @@ while run_again == True:
         alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
         alpha_space = alphabet + [" "]
 
-        # reverses the phrase
+        
         def turn_around(self):
+            """reverses the phrase"""
             back_phrase = ""
             for letter in self.phrase:
                 back_phrase = letter + back_phrase
             return back_phrase
 
-        # strips phrase of all punctuation and spaces (good for palindromes)
+       
         def stripped(self):
+            """strips phrase of all punctuation and spaces (good for palindromes)"""
             stripped_phrase = ""
             for letter in self.phrase:
                 if letter.lower() in self.alphabet:
                     stripped_phrase += letter
             return stripped_phrase
         
-        # strips punctuation but not spaces (good for literally nothing)
+        
         def stripped_with_spaces(self):
+            """strips punctuation but not spaces"""
             space_phrase = ""
             for letter in self.phrase:
                 if letter.lower() in self.alpha_space:
                     space_phrase += letter
             return space_phrase
 
-        # converts phrase to aNnOyInG cAsE
+        
         def annoying_case(self):
+            """converts phrase to alternating lower- and uppercase letters, which I've dubbed aNnOyInG cAsE"""
             annoying_phrase = ""
             i = 0
             while i < len(self.phrase):
