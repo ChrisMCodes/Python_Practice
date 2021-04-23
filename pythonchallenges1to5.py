@@ -11,9 +11,7 @@ def sum_num(a, b, c):
     """
     a, b, c are all integers or floats
     """
-    if a == b == c:
-        return 6 * a
-    return (a + b + c)
+    return 6 * a if a == b == c else (a + b + c)
     
 # Function for challenge #2
 # "Write a function that accepts a number and returns its square root, rounded to three decimal places"
@@ -33,9 +31,7 @@ def quot_rem(num1, num2):
     """
     num1, num2 are integers or floats
     """
-    qt = round(num1 / num2, 2)
-    rm = round(num1 % num2, 2)
-    return qt, rm 
+    return round(num1 / num2, 2), round(num1 % num2, 2) 
 
 # Function for challenge #4
 # "Write a function to check whether a number is even or odd"
