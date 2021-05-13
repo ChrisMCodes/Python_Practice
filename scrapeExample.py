@@ -25,9 +25,18 @@ print(quotes) # in iterable list
 login_link = soup.find(href='/login')
 print(login_link)
 '''
-
+'''
 # Selecting text and author
 quote = soup.find(class_='quote')
 quote_text = quote.find(class_='text')
 quote_author = quote.find(class_='author')
 print(quote.text, quote_author.text)
+'''
+
+# You can also select by css tag
+# using .select (for all) or
+# .select_one (for the first)
+
+quotes = soup.select(".text")
+# returns an array
+print(quotes)
