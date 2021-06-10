@@ -13,3 +13,4 @@ class Book:
         all_attributes = {'id': self.id, 'name': self.name, 'description': self.description, 
                           'isbn': self.isbn, 'page count': self.page_count, 'issued' : self.issued,
                           'author': self.author, 'year': self.year}
+        return all_attributes
